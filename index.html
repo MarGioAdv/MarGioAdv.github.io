@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marssélia Giorgia — IA & Renda Digital</title>
+  <meta name="description" content="Cursos e indicações de Marssélia Giorgia. Aprenda a gerar renda com Inteligência Artificial."/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #08080f; --card: #13131f;
+      --purple: #8b5cf6; --pink: #ec4899;
+      --cyan: #06b6d4; --gold: #f59e0b;
+      --green: #22c55e;
+      --text: #f1f0ff; --muted: #6b7280;
+      --border: rgba(139,92,246,0.2);
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'Space Grotesk', sans-serif; min-height: 100vh; overflow-x: hidden; }
+    body::before {
+      content: ''; position: fixed; top: -200px; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 900px;
+      background: radial-gradient(circle, rgba(139,92,246,0.13) 0%, transparent 65%);
+      pointer-events: none; z-index: 0;
+    }
+    .page { position: relative; z-index: 1; }
+
+
+/* HERO */
+.hero { max-width: 600px; margin: 0 auto; padding: 56px 24px 36px; text-align: center; }
+
+.live-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(236,72,153,0.12); border: 1px solid rgba(236,72,153,0.3);
+  border-radius: 100px; padding: 6px 16px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--pink); margin-bottom: 22px;
+}
+.live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pink); animation: blink 1.2s infinite; }
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.25;} }
+
+.avatar-wrap { position: relative; width: 92px; height: 92px; margin: 0 auto 18px; }
+.avatar-ring {
+  position: absolute; inset: -3px; border-radius: 50%;
+  background: conic-gradient(var(--purple), var(--pink), var(--cyan), var(--purple));
+  animation: spin 5s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.avatar-inner {
+  position: relative; width: 92px; height: 92px; border-radius: 50%;
+  background: var(--bg); display: flex; align-items: center; justify-content: center;
+  font-size: 42px; border: 3px solid var(--bg);
+  overflow: hidden;
+}
+.avatar-inner img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.9rem, 6vw, 3rem); font-weight: 800; line-height: 1.1; margin-bottom: 10px; }
+h1 .grad { background: linear-gradient(135deg, var(--purple), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-bio {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(139,92,246,0.1); border: 1px solid var(--border);
+  border-radius: 100px; padding: 5px 14px; margin-bottom: 12px;
+  font-size: 12px; color: #a5b4fc; font-weight: 600;
+}
+.hero-sub { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 380px; margin: 0 auto 28px; }
+
+/* STATS */
+.stats {
+  display: flex; justify-content: center;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 18px; margin: 0 20px 36px; overflow: hidden;
+}
+.stat { flex: 1; padding: 18px 10px; text-align: center; border-right: 1px solid var(--border); }
+.stat:last-child { border-right: none; }
+.stat-num { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; background: linear-gradient(135deg, var(--purple), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.stat-label { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; margin-top: 3px; line-height: 1.3; }
+
+/* SECTIONS */
+.section { max-width: 540px; margin: 0 auto; padding: 0 20px 44px; }
+.section-head {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.13em;
+  text-transform: uppercase; color: var(--muted);
+}
+.section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* CTA CARD */
+.cta-card {
+  background: linear-gradient(135deg, rgba(139,92,246,0.18), rgba(236,72,153,0.1));
+  border: 1px solid rgba(139,92,246,0.45); border-radius: 20px;
+  padding: 26px 22px; margin-bottom: 14px; position: relative; overflow: hidden;
+}
+.cta-card::after {
+  content: ''; position: absolute; top: -50px; right: -50px;
+  width: 130px; height: 130px;
+  background: radial-gradient(circle, rgba(139,92,246,0.25), transparent 70%);
+}
+.tag-hot {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.4);
+  color: var(--gold); font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  padding: 4px 10px; border-radius: 100px; margin-bottom: 12px;
+}
+.cta-title { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+.cta-desc { font-size: 13px; color: #a5b4fc; line-height: 1.6; margin-bottom: 14px; }
+.badge-ok {
+  display: inline-block; background: rgba(34,197,94,0.12);
+  border: 1px solid rgba(34,197,94,0.3); color: var(--green);
+  font-size: 11px; font-weight: 700; padding: 3px 10px;
+  border-radius: 100px; margin-bottom: 18px;
+}
+.btn-main {
+  display: block; width: 100%;
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  color: #fff; font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px; font-weight: 700; padding: 16px 24px;
+  border-radius: 12px; text-decoration: none; text-align: center;
+  transition: opacity .2s, transform .2s; position: relative; z-index: 1;
+}
+.btn-main:hover { opacity: .88; transform: translateY(-2px); }
+.btn-main:active { transform: scale(.98); }
+
+/* DEPOIMENTO */
+.quote {
+  background: var(--card); border: 1px solid var(--border);
+  border-left: 3px solid var(--purple);
+  border-radius: 0 14px 14px 0; padding: 14px 18px; margin-bottom: 10px;
+}
+.quote p { font-size: 13px; color: #c4b5fd; line-height: 1.6; font-style: italic; margin-bottom: 6px; }
+.quote-author { font-size: 11px; color: var(--muted); font-weight: 600; }
+
+/* LINK ROWS */
+.link-row {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 14px 16px;
+  text-decoration: none; color: var(--text); margin-bottom: 10px;
+  transition: border-color .2s, transform .2s;
+}
+.link-row:hover { border-color: rgba(139,92,246,.45); transform: translateX(4px); }
+.row-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.i-purple { background: rgba(139,92,246,0.15); }
+.i-pink   { background: rgba(236,72,153,0.15); }
+.i-cyan   { background: rgba(6,182,212,0.15);  }
+.i-gold   { background: rgba(245,158,11,0.15); }
+.i-green  { background: rgba(34,197,94,0.15);  }
+.row-text { flex: 1; }
+.row-title { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+.row-desc  { font-size: 12px; color: var(--muted); }
+.row-badge { display: inline-block; background: rgba(34,197,94,0.12); color: var(--green); font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 100px; margin-top: 3px; }
+.row-arrow { color: var(--purple); font-size: 20px; opacity: .6; transition: transform .2s, opacity .2s; }
+.link-row:hover .row-arrow { transform: translateX(4px); opacity: 1; }
+
+/* KWAI HIGHLIGHT */
+.kwai-box {
+  background: linear-gradient(135deg, rgba(6,182,212,0.1), rgba(139,92,246,0.1));
+  border: 1px solid rgba(6,182,212,0.3); border-radius: 16px;
+  padding: 18px 20px; margin-bottom: 10px; text-align: center;
+}
+.kwai-num { font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--cyan); }
+.kwai-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* FOOTER */
+.footer { text-align: center; padding: 24px 20px; font-size: 11px; color: var(--muted); border-top: 1px solid var(--border); line-height: 1.8; }
+.footer a { color: var(--purple); text-decoration: none; }
+
+/* ANIMATE */
+@keyframes fadeUp { from{opacity:0;transform:translateY(18px);} to{opacity:1;transform:translateY(0);} }
+.hero   { animation: fadeUp .45s ease both; }
+.stats  { animation: fadeUp .45s .1s ease both; }
+.section{ animation: fadeUp .45s .18s ease both; }
+
+
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+
+  <div class="hero">
+    <div class="live-pill"><span class="live-dot"></span> Afiliada Ativa · Kiwify</div>
+    <div class="avatar-wrap">
+      <div class="avatar-ring"></div>
+      <div class="avatar-inner">👩‍💻</div>
+    </div>
+    <h1>Marssélia <span class="grad">Giorgia</span></h1>
+    <div class="hero-bio">⚖️ Área Jurídica &nbsp;·&nbsp; 🤖 Renda Digital com IA</div>
+    <p class="hero-sub">
+      "A woman with ambition and a heart of gold."<br/>
+      Aqui você encontra os cursos e ferramentas que uso e recomendo.
+    </p>
+  </div>
+
+  <!-- STATS -->
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">85K</div>
+      <div class="stat-label">Views<br/>Kwai/semana</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2.6K</div>
+      <div class="stat-label">Seguidores<br/>Instagram</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">50%</div>
+      <div class="stat-label">Comissão<br/>Top</div>
+    </div>
+  </div>
+
+  <!-- PRODUTO PRINCIPAL -->
+
+  <div class="section">
+    <div class="section-head">🔥 Minha indicação número 1</div>
+
+
+<div class="cta-card">
+  <div class="tag-hot">⭐ Mais vendido · 50% comissão</div>
+  <div class="cta-title">Escola da IA</div>
+  <p class="cta-desc">
+    Aprenda a criar vídeos profissionais com IA, vender serviços digitais,
+    criar conteúdos virais e monetizar suas redes sociais — mesmo começando do zero.
+  </p>
+  <div class="badge-ok">✅ Uso e recomendo pessoalmente</div><br/>
+  <a class="btn-main" href="https://kiwify.app/zxsuao9?afid=pd5E3rIH" target="_blank">
+    🚀 QUERO COMEÇAR AGORA
+  </a>
+</div>
+
+<div class="quote">
+  <p>"Já indiquei pra mais dois amigos e eles vão comprar. Coisa boa demais!"</p>
+  <div class="quote-author">— Aluno da Escola da IA ⭐⭐⭐⭐⭐</div>
+</div>
+
+
+  </div>
+
+  <!-- OUTROS PRODUTOS -->
+
+  <div class="section">
+    <div class="section-head">📚 Outros cursos que indico</div>
+
+
+<a class="link-row" href="https://kiwify.app/zxsuao9?afid=pd5E3rIH" target="_blank">
+  <div class="row-icon i-cyan">🧠</div>
+  <div class="row-text">
+    <div class="row-title">Método Influência Digital</div>
+    <div class="row-desc">Cresça suas redes e monetize</div>
+    <span class="row-badge">30% comissão</span>
+  </div>
+  <div class="row-arrow">›</div>
+</a>
+
+<a class="link-row" href="https://kiwify.app/zxsuao9?afid=pd5E3rIH" target="_blank">
+  <div class="row-icon i-gold">💪</div>
+  <div class="row-text">
+    <div class="row-title">Base Training</div>
+    <div class="row-desc">Treinamento completo para afiliados</div>
+    <span class="row-badge">10% comissão</span>
+  </div>
+  <div class="row-arrow">›</div>
+</a>
+
+
+  </div>
+
+  <!-- REDES -->
+
+  <div class="section">
+    <div class="section-head">📲 Me siga e entre em contato</div>
+
+
+<!-- KWAI DESTAQUE -->
+<div class="kwai-box">
+  <div class="kwai-num">85.3K</div>
+  <div class="kwai-label">visualizações semanais no Kwai 🔥</div>
+</div>
+
+<a class="link-row" href="https://www.kwai.com/@KwaiMarGiorgia" target="_blank">
+  <div class="row-icon i-cyan">📱</div>
+  <div class="row-text">
+    <div class="row-title">Kwai — @KwaiMarGiorgia</div>
+    <div class="row-desc">85K views/semana · Dicas de IA e renda</div>
+  </div>
+  <div class="row-arrow">›</div>
+</a>
+
+<a class="link-row" href="https://instagram.com/marsseliagiorgia" target="_blank">
+  <div class="row-icon i-pink">📸</div>
+  <div class="row-text">
+    <div class="row-title">Instagram — @marsseliagiorgia</div>
+    <div class="row-desc">2.693 seguidores · Conteúdo e bastidores</div>
+  </div>
+  <div class="row-arrow">›</div>
+</a>
+
+<a class="link-row" href="https://wa.me/5599991719955" target="_blank">
+  <div class="row-icon i-green">💬</div>
+  <div class="row-text">
+    <div class="row-title">WhatsApp — Fale Comigo</div>
+    <div class="row-desc">Dúvidas, parcerias e colaborações</div>
+  </div>
+  <div class="row-arrow">›</div>
+</a>
+
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <div class="footer">
+    ⚜️ Marssélia Giorgia · MarGioAdv · 2026<br/>
+    <a href="https://instagram.com/marsseliagiorgia">@marsseliagiorgia</a> · <a href="https://wa.me/5599991719955">WhatsApp</a><br/>
+    <span style="opacity:.45; font-size:10px;">Links desta página são de afiliada · Plataforma Kiwify</span>
+  </div>
+
+</div>
+</body>
+</html>
